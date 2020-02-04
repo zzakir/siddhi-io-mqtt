@@ -199,6 +199,7 @@ public class MqttSource extends Source {
             connectionOptions.setCleanSession(cleanSession);
             connectionOptions.setKeepAliveInterval(keepAlive);
             connectionOptions.setConnectionTimeout(connectionTimeout);
+            connectionOptions.setAutomaticReconnect(true);
             client.connect(connectionOptions);
             int qos = Integer.parseInt(String.valueOf(qosOption));
             mqttConsumer.subscribe(topicOption, qos, client);

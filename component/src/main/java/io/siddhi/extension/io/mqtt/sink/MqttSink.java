@@ -224,6 +224,7 @@ public class MqttSink extends Sink {
             connectionOptions.setCleanSession(cleanSession);
             connectionOptions.setKeepAliveInterval(keepAlive);
             connectionOptions.setConnectionTimeout(connectionTimeout);
+            connectionOptions.setAutomaticReconnect(true);
             client.connect(connectionOptions);
 
         } catch (MqttException e) {
